@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -17,15 +18,98 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NL5-47-MVC">
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="WebView"/>
+                                <connections>
+                                    <segue destination="yIC-8y-h9j" kind="show" id="jB8-0c-PKY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ILw-0h-JrJ">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="138" id="WMh-MW-BN2"/>
+                                    <constraint firstAttribute="height" constant="92" id="jFs-mj-qMc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="GitHub"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b12-EN-8Fr">
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Image"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ILw-0h-JrJ" firstAttribute="trailing" secondItem="b12-EN-8Fr" secondAttribute="trailing" id="Iaj-xp-TpN"/>
+                            <constraint firstItem="ILw-0h-JrJ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="207" id="Jd2-4R-2WD"/>
+                            <constraint firstItem="ILw-0h-JrJ" firstAttribute="leading" secondItem="NL5-47-MVC" secondAttribute="leading" id="JmT-oB-4mi"/>
+                            <constraint firstItem="b12-EN-8Fr" firstAttribute="centerX" secondItem="NL5-47-MVC" secondAttribute="centerX" id="KTA-0z-vEM"/>
+                            <constraint firstItem="b12-EN-8Fr" firstAttribute="leading" secondItem="NL5-47-MVC" secondAttribute="leading" id="S2i-5f-5Bi"/>
+                            <constraint firstItem="b12-EN-8Fr" firstAttribute="top" secondItem="ILw-0h-JrJ" secondAttribute="bottom" constant="47" id="c4I-mu-hHQ"/>
+                            <constraint firstItem="ILw-0h-JrJ" firstAttribute="centerX" secondItem="NL5-47-MVC" secondAttribute="centerX" id="hVU-d9-cv6"/>
+                            <constraint firstItem="ILw-0h-JrJ" firstAttribute="top" secondItem="NL5-47-MVC" secondAttribute="bottom" constant="29" id="kIC-Cg-I8l"/>
+                            <constraint firstItem="b12-EN-8Fr" firstAttribute="leading" secondItem="NL5-47-MVC" secondAttribute="leading" id="mD4-y0-TNu"/>
+                            <constraint firstItem="ILw-0h-JrJ" firstAttribute="leading" secondItem="NL5-47-MVC" secondAttribute="leading" id="nEn-Ub-wZd"/>
+                            <constraint firstItem="ILw-0h-JrJ" firstAttribute="leading" secondItem="NL5-47-MVC" secondAttribute="leading" id="qe0-nV-RRT"/>
+                            <constraint firstItem="ILw-0h-JrJ" firstAttribute="trailing" secondItem="NL5-47-MVC" secondAttribute="trailing" id="tOK-wf-w5P"/>
+                            <constraint firstItem="b12-EN-8Fr" firstAttribute="leading" secondItem="NL5-47-MVC" secondAttribute="leading" id="v59-Np-h9o"/>
+                            <constraint firstItem="ILw-0h-JrJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zh9-QF-ETv"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="aAG-BI-aQZ"/>
                     <connections>
-                        <segue destination="TzN-qa-xBr" kind="show" id="2w3-x3-3zU"/>
+                        <outlet property="wkWebvView" destination="NL5-47-MVC" id="5m1-fQ-ri0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="32.799999999999997" y="37.331334332833585"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="a52-lB-hxB">
+            <objects>
+                <viewController id="yIC-8y-h9j" customClass="WKWebViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="OvP-rI-HZc"/>
+                        <viewControllerLayoutGuide type="bottom" id="uzW-t7-PpX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zEl-n3-EsW">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gwc-mE-dJP" userLabel="container view">
+                                <subviews>
+                                    <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k7x-da-RwV">
+                                        <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </webView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="k7x-da-RwV" secondAttribute="bottom" id="Fs7-Rt-nlW"/>
+                                    <constraint firstAttribute="trailing" secondItem="k7x-da-RwV" secondAttribute="trailing" id="Oug-n6-M8U"/>
+                                    <constraint firstItem="k7x-da-RwV" firstAttribute="leading" secondItem="gwc-mE-dJP" secondAttribute="leading" id="aw9-pk-Cit"/>
+                                    <constraint firstItem="k7x-da-RwV" firstAttribute="top" secondItem="gwc-mE-dJP" secondAttribute="top" id="iI3-an-NN2"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="gwc-mE-dJP" secondAttribute="trailing" constant="-16" id="70S-RC-yyb"/>
+                            <constraint firstItem="gwc-mE-dJP" firstAttribute="top" secondItem="OvP-rI-HZc" secondAttribute="bottom" id="9kg-Oy-8k7"/>
+                            <constraint firstItem="uzW-t7-PpX" firstAttribute="top" secondItem="gwc-mE-dJP" secondAttribute="bottom" id="MSc-6Z-4ZK"/>
+                            <constraint firstItem="gwc-mE-dJP" firstAttribute="leading" secondItem="zEl-n3-EsW" secondAttribute="leadingMargin" constant="-16" id="weJ-JG-bnd"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <connections>
+                        <outlet property="WKWbView" destination="k7x-da-RwV" id="7CS-C3-wt9"/>
+                        <outlet property="containerView" destination="gwc-mE-dJP" id="4J3-1o-mV0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cpK-VW-qB8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="816.79999999999995" y="36.431784107946029"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="bH7-U2-aiB">
@@ -40,7 +124,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4pD-1J-aEM" id="J07-VZ-oAu">
-                                    <frame key="frameInset" width="375" height="43"/>
+                                    <frame key="frameInset" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -70,25 +154,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wmm-F4-gbi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-852" y="37"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="0Y3-Ha-Ih1">
-            <objects>
-                <viewController id="TzN-qa-xBr" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="NhH-Uv-z7f"/>
-                        <viewControllerLayoutGuide type="bottom" id="lYb-D0-jcv"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="E1T-Ko-SUH">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Zcg-Gs-zuy" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="889" y="37"/>
+            <point key="canvasLocation" x="-807" y="36"/>
         </scene>
     </scenes>
 </document>
