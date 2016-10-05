@@ -1,5 +1,5 @@
 //
-//  WKWebViewController.h
+//  TableViewController.h
 //  WkWebViewSample
 //
 //  Created by Infobank_mac on 10/4/16.
@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WKWebViewController : UIViewController <UIWebViewDelegate>
-
+@interface TableViewController : UIViewController   <UITableViewDelegate, UITableViewDataSource>
 
 @end
