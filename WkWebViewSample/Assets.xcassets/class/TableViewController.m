@@ -49,6 +49,10 @@ NSMutableArray *array;
     // Dispose of any resources that can be recreated.
 }
 
+- (void)setData {
+    
+}
+
 /*
 #pragma mark - Navigation
 
